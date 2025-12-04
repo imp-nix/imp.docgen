@@ -7,4 +7,4 @@ let
     inherit lib docgenLib schema;
   };
 in
-(import ./lib.nix args) // (import ./schema.nix args)
+(import ./lib.nix args) // (import ./schema.nix args) // (import ./mkDocgen.nix args)
