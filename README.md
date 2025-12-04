@@ -19,7 +19,7 @@ The generated markdown is designed to integrate with mdbook-based documentation 
 ```nix
 {
   inputs = {
-    docgen.url = "github:Alb-O/docgen";
+    docgen.url = "github:imp-nix/imp.docgen";
     # ...
   };
 }
