@@ -21,6 +21,29 @@
         "type": "github"
       }
     },
+    "imp-fmt": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "treefmt-nix": [
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1764986973,
+        "narHash": "sha256-IGmcZquQBCdJqkCG+XEmwfq13BjapHYrURtXdOGRdcs=",
+        "owner": "imp-nix",
+        "repo": "imp.fmt",
+        "rev": "c9550586f745c7063800f78479629d954a274f36",
+        "type": "github"
+      },
+      "original": {
+        "owner": "imp-nix",
+        "repo": "imp.fmt",
+        "type": "github"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -83,6 +106,7 @@
     },
     "root": {
       "inputs": {
+        "imp-fmt": "imp-fmt",
         "nix-unit": "nix-unit",
         "nixpkgs": "nixpkgs",
         "treefmt-nix": "treefmt-nix_2"
