@@ -7,9 +7,9 @@
     nix-unit.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-    imp.url = "github:imp-nix/imp.lib";
-    imp.inputs.nixpkgs.follows = "nixpkgs";
-    imp.inputs.treefmt-nix.follows = "treefmt-nix";
+    imp-fmt.url = "github:imp-nix/imp.fmt";
+    imp-fmt.inputs.nixpkgs.follows = "nixpkgs";
+    imp-fmt.inputs.treefmt-nix.follows = "treefmt-nix";
   };
 
   outputs =
@@ -18,7 +18,7 @@
       nixpkgs,
       nix-unit,
       treefmt-nix,
-      imp,
+      imp-fmt,
     }:
     let
       lib = nixpkgs.lib;
@@ -74,7 +74,7 @@
         system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
-          formatterEval = imp.formatterLib.makeEval {
+          formatterEval = imp-fmt.lib.makeEval {
             inherit pkgs treefmt-nix;
             rust.enable = true;
           };
@@ -104,7 +104,7 @@
 
       formatter = forAllSystems (
         system:
-        imp.formatterLib.make {
+        imp-fmt.lib.make {
           pkgs = nixpkgs.legacyPackages.${system};
           inherit treefmt-nix;
           rust.enable = true;
