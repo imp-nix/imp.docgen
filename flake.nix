@@ -32,13 +32,9 @@
 
       forAllSystems = f: lib.genAttrs systems (system: f system);
 
-      # Core Nix library
       coreLib = import ./nix/lib.nix { inherit lib; };
-
-      # Schema types
       schema = import ./nix/schema.nix { inherit lib; };
 
-      # Rust CLI (crate is named nixdoc internally, package exposed as docgen)
       mkDocgenCli =
         { rustPlatform, ... }:
         let
